@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Sign-up Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .signup-container h2 {
+            color: #333;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .signup-form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .signup-form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .signup-form button:hover {
+            background-color: #45a049;
+        }
+
+        .signup-form p {
+            margin-top: 10px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post" class="signup-form">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="email" placeholder="Email" name="mailid" required>
+            <input type="password" placeholder="Password" name="passwd" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="/signin">Login</a></p>
+    </div>
+</body>
+</html>
